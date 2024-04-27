@@ -8,22 +8,37 @@
     <body>
         <div class="object">
             <div class="calculator">
-                <div class="window">0</div>
-                <button class="operator">+</button>
-                <button class="operator">-</button>
-                <button class="operator">x</button>
-                <button class="operator">/</button>
+                <div class="window">
+                    <div class="input">0</div>
+                </div>
+                <div class="operators">
+                    <div class="row">
+                        <button class="number">7</button>
+                        <button class="number">8</button>
+                        <button class="number">9</button>
+                        <button class="operator">+</button>
+                    </div>
+                    <div class="row">
+                        <button class="number">4</button>
+                        <button class="number">5</button>
+                        <button class="number">6</button>
+                        <button class="operator">-</button>
+                    </div>
+                    <div class="row">
+                        <button class="number">3</button>
+                        <button class="number">2</button>
+                        <button class="number">1</button>
+                        <button class="operator">x</button>
+                    </div>
+                    <div class="row">
+                        <button class="number">0</button>
+                        <button class="decimal">.</button>
+                        <button class="operator">=</button>
+                        <button class="operator">/</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <script src="./operations.js">
-            let num1, num2, operation;
-            // let buttons = document.getElementsByClassName("operator");
-            // for(let i = 0; i < buttons.length; i++)
-            // {
-            //     buttons[i].addEventListener("mouseover", function () {
-            //             button[i].style.backgroundColor = "black"});
-            // }
-
-        </script>
+        <script src="./operations.js"></script>
     </body>
 </html>

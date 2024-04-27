@@ -1,34 +1,67 @@
+div
+{
+    border-radius: 25px;
+}
 .object
 {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
+}
 
-}
-.window
-{
-    flex: 1;
-    background-color: lightgray;
-    font-size: xx-large;
-    text-align: center;
-}
 .calculator
 {
     background-color: lightpink;
-    width: 500px;
+    width: 360px;
     height: 500px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.window
+{
+    background-color: lightgray;
+    font-size: xx-large;
+    text-align: right;
+    padding: 10px;
+    margin: 15px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+.operators
+{
+    height: 400px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2px;
     padding: 10px;
     align-items: flex-end;
 }
 
-.operator
+.row
+{
+    display: flex;
+    flex: 1;
+    margin-right: 10px;
+}
+
+button
 {
     flex: 1;
-    width: 50px;
+    width: 70px;
     margin: 5px;
     font-size: xx-large;
+    border-radius: 25px;
+    background-color: white;
 }
+
+/* #equal
+{
+    flex: 3;
+    margin-bottom: 10px;
+} */
+
+/* .equal {
+    flex: 5;
+} */
