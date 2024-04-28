@@ -12,7 +12,7 @@ div
 
 .calculator
 {
-    background-color: lightpink;
+    background-color: #B2D9FF;
     width: 360px;
     height: 500px;
     border: 2px solid black;
@@ -23,10 +23,11 @@ div
 {
     background-color: lightgray;
     font-size: xx-large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: right;
     padding: 10px;
     margin: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border: 2px solid black;
 }
 .operators
@@ -54,6 +55,13 @@ button
     font-size: xx-large;
     border-radius: 25px;
     background-color: white;
+}
+
+.seperator
+{
+    background-color: white;
+    width: 150px;
+    margin: 5px;
 }
 
 /* #equal
