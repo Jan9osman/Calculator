@@ -17,7 +17,7 @@ for(let num = 0; num < numbers.length; num++)
 {
     numbers[num].addEventListener("click", function()
     {
-        if(operation === undefined)
+        if(operation == null && num1 != null && num2 != null)
         {
             num1 += numbers[num].textContent;
             windowDiv.textContent = num1;
@@ -25,6 +25,10 @@ for(let num = 0; num < numbers.length; num++)
         }
         else
         {
+            if(num2 == null)
+            {
+                num2 = "";
+            }
             num2 += numbers[num].textContent;
             windowDiv.textContent = num2;
             console.log(num2);
@@ -32,32 +36,51 @@ for(let num = 0; num < numbers.length; num++)
     });
 }
 
+let equalSign = document.getElementById("equal");
+equalSign.addEventListener("click", function()
+{
+    if(num1 != null && num2 != null && operation != null)
+    {
+        if(result == null)
+        {
+            result = operate(operation, num1, num2);
+            windowDiv.textContent = result;
+            num1 = result;
+            result = null;
+            operation = null;
+            num2 = null;
+        }
+    }
+
+});
+
 let operations = document.getElementsByClassName("operator");
 for(let op = 0; op < operations.length; op++)
 {
     operations[op].addEventListener("click", function()
     {
-        if(num1 != null && operation === undefined)
+        if(num1 != null && operation == null)
         {
-            operation = operations[op];
+            operation = operations[op].textContent;
+            console.log(operation)
         }
     });
 }
 
 function add(num1, num2) {
-    return num1 + num2;
+    return Number(num1) + Number(num2);
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return Number(num1) - Number(num2);
 }
 
 function multiple(num1, num2) {
-    return num1 * num2;
+    return Number(num1) * Number(num2);
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    return Number(num1) / Number(num2);
 }
 
 function operate(operation, num1, num2) {
@@ -67,7 +90,7 @@ function operate(operation, num1, num2) {
     else if (operation == "-") {
         return subtract(num1, num2);
     }
-    else if (operation == "*") {
+    else if (operation == "x") {
         return multiple(num1, num2);
     }
     else if (operation == "/") {
