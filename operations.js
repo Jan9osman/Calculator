@@ -1,6 +1,6 @@
-let num1, num2, operation, result = undefined;
-num1 = "";
-num2 = "";
+let num1, num2, operation, result = null;
+num1 = null;
+num2 = null;
 let buttons = document.getElementsByTagName("button");
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("mouseover", function () {
@@ -17,8 +17,12 @@ for(let num = 0; num < numbers.length; num++)
 {
     numbers[num].addEventListener("click", function()
     {
-        if(operation == null && num1 != null && num2 != null)
+        if(operation == null && num1 == null && num2 == null)
         {
+            if(num1 == null)
+            {
+                num1 = "";
+            }
             num1 += numbers[num].textContent;
             windowDiv.textContent = num1;
             console.log(num1);
@@ -66,6 +70,15 @@ for(let op = 0; op < operations.length; op++)
         }
     });
 }
+
+let clear = document.getElementById("clear");
+clear.addEventListener("click", function(){
+    num1 = null;
+    num2 = null;
+    operation = null;
+    result = null;
+    windowDiv.textContent = "0";
+});
 
 function add(num1, num2) {
     return Number(num1) + Number(num2);
