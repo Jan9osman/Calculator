@@ -1,6 +1,7 @@
 let num1, num2, operation, result = null;
 num1 = null;
 num2 = null;
+let operations = document.getElementsByClassName("operator");
 let buttons = document.getElementsByTagName("button");
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("mouseover", function () {
@@ -53,12 +54,16 @@ equalSign.addEventListener("click", function()
             result = null;
             operation = null;
             num2 = null;
+
+            for(let k = 0; k < operations.length; k++)
+            {
+                operations[k].disabled = false;
+            }
         }
     }
 
 });
 
-let operations = document.getElementsByClassName("operator");
 for(let op = 0; op < operations.length; op++)
 {
     operations[op].addEventListener("click", function()
@@ -66,7 +71,17 @@ for(let op = 0; op < operations.length; op++)
         if(num1 != null && operation == null)
         {
             operation = operations[op].textContent;
-            console.log(operation)
+        }
+        for(let k = 0; k < operations.length; k++)
+        {
+            if(operation != null)
+            {
+                operations[k].disabled = true;
+            }
+            else
+            {
+                operations[k].disabled = false;
+            }
         }
     });
 }
@@ -78,6 +93,10 @@ clear.addEventListener("click", function(){
     operation = null;
     result = null;
     windowDiv.textContent = "0";
+    for(let k = 0; k < operations.length; k++)
+    {
+        operations[k].disabled = false;
+    }
 });
 
 function add(num1, num2) {
